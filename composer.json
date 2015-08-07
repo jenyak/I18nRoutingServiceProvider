@@ -1,5 +1,4 @@
 {
-  "minimum-stability": "dev",
   "name": "jenyak/i18n-routing-service-provider",
   "description": "Silex i18n routing service provider.",
   "require": {
