@@ -19,7 +19,7 @@ the following to your `composer.json` file:
 
 * **i18n_routing.translation_domain**: Translation message domain. The default value is `routes`.
 * **i18n_routing.locales**: Routing locales. The default value is `array(en)`.
-* **locale**: Uses as default routing locale. The default value is `en`.
+* **locale**: Default routing locale. The default value is `en`.
 
 # Usage
 
@@ -33,4 +33,23 @@ Setup your routing locales:
 ```php
 $app['i18n_routing.locales'] = ['en', 'ua'];
 ```
+
+# Example
+
+```php
+$app = new Application();
+...
+$app->register(new Jenyak\I18nRouting\Provider\I18nRoutingServiceProvider());
+$app['i18n_routing.locales'] = array('en', 'ua');
+
+$app->get('/test', function () {
+   ...
+});
+```
+matched URLs will be:
+
+    /test
+    /ua/test
+    
+there's no need to put `{_locale}` in route pattern
 
