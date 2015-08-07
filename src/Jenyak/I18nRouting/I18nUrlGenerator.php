@@ -23,7 +23,6 @@ class I18nUrlGenerator extends UrlGeneratorBase
         } else if ($currentLocale) {
             $locale = $currentLocale;
         } else {
-//            $locale = $this->defaultLocale;
             $locale = 'en';
         }
 
