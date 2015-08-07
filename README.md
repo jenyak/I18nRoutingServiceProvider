@@ -40,16 +40,17 @@ $app['i18n_routing.locales'] = ['en', 'ua'];
 $app = new Application();
 ...
 $app->register(new Jenyak\I18nRouting\Provider\I18nRoutingServiceProvider());
+$app['locale'] = 'en';
 $app['i18n_routing.locales'] = array('en', 'ua');
 
+// There's no need to put {_locale} in route pattern
 $app->get('/test', function () {
    ...
 });
 ```
-matched URLs will be:
+Matched URLs will be:
 
-    /test
-    /ua/test
-    
-there's no need to put `{_locale}` in route pattern
+`/test` - url for default locale without prefix
+`/ua/test`
+
 
