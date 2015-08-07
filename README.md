@@ -51,6 +51,7 @@ $app->get('/test', function () {
 Matched URLs will be:
 
 `/test` - url for default locale without prefix
+
 `/ua/test`
 
 
