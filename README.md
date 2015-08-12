@@ -11,7 +11,7 @@ the following to your `composer.json` file:
 
     {
         "require": {
-            "nicl/silex-autolink": "1.0.*"
+            "jenyak/i18n-routing-service-provider": "dev-master"
         }
     }
 
@@ -31,7 +31,7 @@ $app->register(new Jenyak\I18nRouting\Provider\I18nRoutingServiceProvider());
 
 ```php
 $app = new Application();
-...
+//...
 $app->register(new Jenyak\I18nRouting\Provider\I18nRoutingServiceProvider());
 $app['locale'] = 'en';
 $app['i18n_routing.locales'] = array('en', 'hu', 'ua');
@@ -43,7 +43,7 @@ $app['translator.domains'] = array('routes' => array(
 
 // There's no need to put {_locale} in route pattern
 $app->get('/test', function () {
-   ...
+   //...
 })->bind('test_route');
 ```
 Matched URLs will be:
