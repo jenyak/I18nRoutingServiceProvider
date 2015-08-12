@@ -18,7 +18,6 @@ class I18nRoutingServiceProviderTest extends \PHPUnit_Framework_TestCase
 
         $app['i18n_routing.locales'] = array('en', 'ua');
         $app['translator.domains'] = array('routes' => array(
-            'en' => array('test' => '/test'),
             'ua' => array('test' => '/тест'),
         ));
 

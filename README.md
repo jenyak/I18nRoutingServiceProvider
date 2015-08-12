@@ -15,24 +15,17 @@ the following to your `composer.json` file:
         }
     }
 
-# Parameters
-
-* **i18n_routing.translation_domain**: Translation message domain. The default value is `routes`.
-* **i18n_routing.locales**: Routing locales. The default value is `array(en)`.
-* **locale**: Default routing locale. The default value is `en`.
-
-# Usage
-
-Registering
+# Registering
 
 ```php
 $app->register(new Jenyak\I18nRouting\Provider\I18nRoutingServiceProvider());
 ```
 
-Setup your routing locales:
-```php
-$app['i18n_routing.locales'] = ['en', 'ua'];
-```
+# Parameters
+
+* **i18n_routing.translation_domain**: Translation domain for routes. The default value is `routes`.
+* **i18n_routing.locales**: Routing locales. The default value is `array(en)`.
+* **locale**: Default routing locale. The default value is `en`.
 
 # Example
 
@@ -41,17 +34,24 @@ $app = new Application();
 ...
 $app->register(new Jenyak\I18nRouting\Provider\I18nRoutingServiceProvider());
 $app['locale'] = 'en';
-$app['i18n_routing.locales'] = array('en', 'ua');
+$app['i18n_routing.locales'] = array('en', 'hu', 'ua');
+
+// You can translate patterns
+$app['translator.domains'] = array('routes' => array(
+    'hu' => array('test_route' => '/teszt'),
+));
 
 // There's no need to put {_locale} in route pattern
 $app->get('/test', function () {
    ...
-});
+})->bind('test_route');
 ```
 Matched URLs will be:
 
 `/test` - url for default locale without prefix
 
-`/ua/test`
+`/hu/teszt` - url with prefix and translated
+
+`/ua/test` - url with prefix
 
 
