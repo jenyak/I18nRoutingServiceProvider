@@ -3,9 +3,7 @@
   "name": "jenyak/i18n-routing-service-provider",
   "description": "Silex i18n routing service provider.",
   "require": {
-    "silex/silex": "~1.1"
-  },
-  "require-dev": {
+    "silex/silex": "~1.1",
     "symfony/translation": "~2.4"
   },
   "autoload": {
