@@ -13,6 +13,8 @@ class I18nRoutingServiceProviderTest extends \PHPUnit_Framework_TestCase
     private function createApplication()
     {
         $app = new Application();
+        $app['locale'] = 'en';
+
         $app->register(new TranslationServiceProvider());
         $app->register(new I18nRoutingServiceProvider());
 
