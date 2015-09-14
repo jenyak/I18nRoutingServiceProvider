@@ -8,7 +8,13 @@ Installation
 
 Recommended installation is [through composer](http://getcomposer.org). Just add
 the following to your `composer.json` file:
-
+### Silex 1.3
+    {
+        "require": {
+            "jenyak/i18n-routing-service-provider": "~1.0"
+        }
+    }
+### Silex 2
     {
         "require": {
             "jenyak/i18n-routing-service-provider": "dev-master"
